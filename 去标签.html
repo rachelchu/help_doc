@@ -1,0 +1,33 @@
+<script>
+
+window.onload=function(){
+
+//创建一个html元素
+
+var d=document.createElement('body');
+
+//设置他的innerHTML
+
+d.innerHTML='<ul><li><em class="placeholder">Notice</em>: Trying to get property of non-object 在 <em class="placeholder">_product_usage_record_get_product_names()</em> (行 <em class="placeholder">271</em> 在 <em class="placeholder">/var/www/docroot/sites/default/modules/custom/product_usage_record/product_usage_record.module</em>).</li><li><em class="placeholder">Notice</em>: Trying to get property of non-object 在 <em class="placeholder">_product_usage_record_get_product_names()</em> (行 <em class="placeholder">272</em> 在 <em class="placeholder">/var/www/q.module</em>).</li></ul>';
+
+//d.innerText，也就得到了他的文本，浏览器自动就帮你把html标签去掉了
+
+document.body.appendChild(  
+
+document.createTextNode( d.innerText||d.textContent )
+
+);//把得到的文本拼接到body  //d.textContent是用来适配firefox浏览器的
+
+//打开浏览器的调试工具，查看控制台才能看到log
+
+console.log( d );//输出的html
+
+console.log( d.innerText||d.textContent );//输出的是文本，html标签就已经过滤掉了
+
+}
+
+</script>
+
+
+
+
